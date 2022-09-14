@@ -5,8 +5,4 @@ import './styles/global-styles.css';
 
 import { Home } from './templates/Home';
 
-ReactDOM.render(
-  <Home />,
-
-  document.getElementById('root'),
-);
+ReactDOM.render(<Home />, document.getElementById('root'));

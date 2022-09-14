@@ -1,4 +1,4 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import P from 'prop-types';
 
 export const initialState = {
@@ -9,7 +9,8 @@ export const initialState = {
 const Context = createContext();
 
 export const CounterContextProvider = ({ children }) => {
-  return <Context.Provider value={initialState}>{children}</Context.Provider>;
+  const [state, dispatch] = useState(initialState);
+  return <Context.Provider value={[state, dispatch]}>{children}</Context.Provider>;
 };
 
 CounterContextProvider.propTypes = {

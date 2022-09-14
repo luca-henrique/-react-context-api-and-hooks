@@ -20,5 +20,9 @@ CounterContextProvider.propTypes = {
 export const useCounterContext = () => {
   const context = useContext(Context);
 
+  if (typeof context === 'undefined') {
+    throw new Error('You have to use CounterContext inside');
+  }
+
   return [...context];
 };

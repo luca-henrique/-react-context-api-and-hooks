@@ -6,7 +6,7 @@ export const initialState = {
   loading: false,
 };
 
-const Context = createContext();
+const Context = createContext({});
 
 export const CounterContextProvider = ({ children }) => {
   const [state, dispatch] = useState(initialState);
@@ -26,3 +26,5 @@ export const useCounterContext = () => {
 
   return [...context];
 };
+
+export default useCounterContext;

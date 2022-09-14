@@ -5,4 +5,11 @@ import './styles/global-styles.css';
 
 import { Home } from './templates/Home';
 
-ReactDOM.render(<Home />, document.getElementById('root'));
+import { CounterContextProvider } from './contexts/CounterContext';
+
+ReactDOM.render(
+  <CounterContextProvider>
+    <Home />
+  </CounterContextProvider>,
+  document.getElementById('root'),
+);

@@ -3,7 +3,6 @@ import * as actionsTypes from './actions-types';
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case value:
     case actionsTypes.INCREASE:
       return { ...state, counter: state.counter + 1 };
 
@@ -22,12 +21,10 @@ export const reducer = (state, action) => {
     case actionsTypes.ASYNC_INCREATE_END:
       return { ...state, loading: false, number: action.payload };
 
-    case actionsTypes.ASYNC_INCREATE_END:
+    case actionsTypes.ASYNC_INCREATE_ERROR:
       return { ...state, loading: false, error: true };
 
     default:
       return state;
   }
-
-  return state;
 };

@@ -1,13 +1,14 @@
 import { useCounterContext } from '../../contexts/CounterContext';
 
+import { Button } from '../../components/Button';
+
 export const Home = () => {
   const [state, dispatch] = useCounterContext();
 
-  console.log(dispatch);
-
   return (
     <div>
-      <h1 onClick={() => dispatch.increse()}>Resetando projeto</h1>
+      <Button onEventClick={() => dispatch.current.increse()} title={state.counter} />
+      <Button onEventClick={() => dispatch.current.decrease()} title={state.counter} />
     </div>
   );
 };
